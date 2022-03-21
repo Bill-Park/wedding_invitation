@@ -1,13 +1,25 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-      <v-btn>abc</v-btn>
-    </div>
-    <router-view/>
-  </div>
+  <layout-normal v-if="isAuth"/>
+  <layout-attendance v-else/>
+  <!-- <div>
+    test message
+  </div> -->
 </template>
+<script lang="ts">
+import { Vue, Component } from 'vue-property-decorator'
+import LayoutNormal from '@/components/layout/normal.vue'
+import LayoutAuth from '@/components/layout/auth.vue'
+import LayoutAttendance from '@/components/layout/attendance.vue'
+
+@Component({
+  components: {
+    LayoutNormal, LayoutAuth, LayoutAttendance
+  }
+})
+export default class App extends Vue {
+  isAuth = false
+}
+</script>
 
 <style lang="scss">
 #app {
