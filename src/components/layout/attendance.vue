@@ -16,6 +16,7 @@
                     </v-text-field>
                 </v-row>
             </v-container>
+            <v-btn @click="closeSubmit">닫기</v-btn>
         </v-main>
     </v-app>
 </template>
@@ -25,7 +26,10 @@ import { Component, Vue } from 'vue-property-decorator'
 
 @Component
 export default class LayoutAttendance extends Vue {
-
+  closeSubmit ():void {
+    console.log('close submit')
+    this.$emit('submitClose')
+  }
 }
 </script>
 

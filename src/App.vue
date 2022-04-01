@@ -1,23 +1,18 @@
 <template>
-  <layout-normal v-if="isAuth"/>
-  <layout-attendance v-else/>
-  <!-- <div>
-    test message
-  </div> -->
+  <layout-normal/>
 </template>
 <script lang="ts">
 import { Vue, Component } from 'vue-property-decorator'
 import LayoutNormal from '@/components/layout/normal.vue'
 import LayoutAuth from '@/components/layout/auth.vue'
-import LayoutAttendance from '@/components/layout/attendance.vue'
 
 @Component({
   components: {
-    LayoutNormal, LayoutAuth, LayoutAttendance
+    LayoutNormal, LayoutAuth
   }
 })
 export default class App extends Vue {
-  isAuth = false
+  submitFlag = false
 }
 </script>
 
