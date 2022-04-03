@@ -3,8 +3,11 @@
         <v-main>
             <v-container>
                 normal
+                메인사진
             </v-container>
-            <v-btn @click="openSubmit">열기</v-btn>
+            <v-btn @click="openSubmit">참석 등록</v-btn>
+            <v-btn @click="openSubmit">사진보기</v-btn>
+            <v-btn @click="openSubmit">약도보기</v-btn>
             <layout-attendance
             v-show="submitFlag"
             @submitClose="submitClose"/>
