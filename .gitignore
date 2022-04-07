@@ -122,3 +122,6 @@ firebaseConfig.js
 # End of https://www.toptal.com/developers/gitignore/api/vue,vuejs,git,windows,visualstudiocode
 
 .github/
+
+# images
+*.jpg
