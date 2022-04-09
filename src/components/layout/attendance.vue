@@ -39,7 +39,7 @@
               식사여부
             </v-subheader>
           </v-col>
-          <v-col>
+          <v-col cols="8">
             <v-btn-toggle v-model="meal" tile color="blue accent-3" group>
               <v-btn value="eat" outlined>잘먹겠습니다</v-btn>
               <v-btn value="not" outlined>다음 기회에</v-btn>
