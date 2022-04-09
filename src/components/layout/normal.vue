@@ -4,9 +4,9 @@
       <v-container class="d-flex flex-column">
         <v-img src="@/assets/main.jpg" height="50%"> </v-img>
         <v-row group class="mt-4 align-self-center">
-          <v-btn outlined x-large class="rounded rounded-r-0 title" @click="openSubmit">참석 등록</v-btn>
+          <v-btn outlined x-large class="rounded rounded-r-0 title" @click="openSubmit" :class="{'light-blue lighten-5 blue--text':submitFlag}">참석 등록</v-btn>
           <v-btn outlined x-large class="rounded-0 title" @click="openPhotos">사진보기</v-btn>
-          <v-btn outlined x-large class="rounded rounded-l-0 title" @click="openSubmit">약도보기</v-btn>
+          <v-btn outlined x-large class="rounded rounded-l-0 title" @click="openMap">식장위치</v-btn>
         </v-row>
         <v-row class="align-self-center red--text lighten-1" v-show="!submitFlag">
           참석 등록을 하지않은 경우 식사가 어려울 수 있으니 꼭 등록해주시기
@@ -47,6 +47,11 @@ export default class LayoutNormal extends Vue {
 
     closePhotos (): void{
       this.photoFlag = false
+    }
+
+    openMap (): void{
+      const url = 'http://naver.me/585jte2U'
+      window.open(url, '_blank')
     }
 }
 </script>
