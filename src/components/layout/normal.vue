@@ -3,32 +3,29 @@
     <v-main>
       <v-container class="d-flex flex-column pa-0 pt-5">
         <v-img class="align-self-center" src="@/assets/comp_main.webp" height="50%"/>
-        <v-row group class="mt-4 align-self-center px-2">
+        <v-row id="button_group" group class="mt-4 align-self-center px-2 d-flex flex-row">
           <v-btn
           outlined
-          x-large
-          width="33%"
+          :x-large="!isMobile()"
           class="rounded rounded-r-0 title"
           @click="toggleSubmit"
-          :class="{'light-blue lighten-5 blue--text':submitFlag}">
+          :class="{'light-blue lighten-5 blue--text':submitFlag, 'px-2 py-5':isMobile()}">
           참석 등록
           </v-btn>
           <v-btn
           outlined
-          x-large
-          width="33%"
+          :x-large="!isMobile()"
           class="rounded-0 title"
           @click="togglePhotos"
-          :class="{'light-blue lighten-5 blue--text':photoFlag}">
+          :class="{'light-blue lighten-5 blue--text':photoFlag, 'px-2 py-5':isMobile()}">
           사진보기
           </v-btn>
           <v-btn
           outlined
-          x-large
-          width="33%"
+          :x-large="!isMobile()"
           class="rounded rounded-l-0 title"
-          @click="dialogFlag=true">
-
+          @click="dialogFlag=true"
+          :class="{'px-2 py-5':isMobile()}">
           식장위치
           </v-btn>
         </v-row>
@@ -133,11 +130,22 @@ export default class LayoutNormal extends Vue {
       }
       window.open(url, '_blank')
     }
+
+    isMobile ():boolean {
+      if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini/i.test(navigator.userAgent)) {
+        return true
+      } else {
+        return false
+      }
+    }
 }
 </script>
 
 <style scoped>
   .container {
     width:90%
+  }
+  #button_group {
+    /* width:100% */
   }
 </style>

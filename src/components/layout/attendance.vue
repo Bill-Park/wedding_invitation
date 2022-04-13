@@ -2,20 +2,20 @@
   <v-app>
     <v-main>
       <v-container class="d-flex flex-column">
-        <v-row class="pb-0 mb-0">
+        <v-row class="pb-0 mb-0" align="center">
           <v-col cols=4>
-            <v-subheader class="title black--text justify-center pl-0">
+            <v-subheader class="black--text justify-center pl-0">
               성&nbsp;&nbsp;&nbsp;&nbsp;함
             </v-subheader>
           </v-col>
-          <v-col class="align-center">
+          <v-col>
             <v-text-field label="이름을 적어주세요" v-model="name" dense outlined clearable hide-details="true">
             </v-text-field>
           </v-col>
         </v-row>
-        <v-row class="justify-center pb-0">
+        <v-row class="justify-center pb-0" align="center">
           <v-col cols=4 class="align-center justify-center">
-            <v-subheader class="title black--text justify-center pl-0">
+            <v-subheader class="black--text justify-center pl-0">
               추가인원
             </v-subheader>
           </v-col>
@@ -31,32 +31,34 @@
           </v-col>
         </v-row>
         <v-row class="justify-center pt-0 mt-0">
-          가족은 대표로 1분만 등록해주세요
+          <v-col class="ma-0 pa-0">
+            가족은 대표로 1분만 등록해주세요
+          </v-col>
         </v-row>
-        <v-row cols=4 class="justify-center">
+        <v-row cols=4 class="justify-center" align="center">
           <v-col>
-            <v-subheader class="title black--text justify-center pl-0">
+            <v-subheader class="black--text justify-center pl-0">
               식사여부
             </v-subheader>
           </v-col>
           <v-col cols="8">
             <v-btn-toggle v-model="meal" tile color="blue accent-3" group>
-              <v-btn value="eat" outlined>잘먹겠습니다</v-btn>
-              <v-btn value="not" outlined>다음 기회에</v-btn>
+              <v-btn value="eat" outlined plain class="mx-0">잘먹겠습니다</v-btn>
+              <v-btn value="not" outlined plain class="mx-0">다음 기회에</v-btn>
             </v-btn-toggle>
           </v-col>
         </v-row>
-        <v-row class="justify-center">
+        <v-row class="justify-center" align="center">
           <v-col cols=4>
-            <v-subheader class="title black--text justify-center pl-0">
+            <v-subheader class="black--text justify-center pl-0">
               주차유무
             </v-subheader>
           </v-col>
           <v-col cols=8>
             <v-btn-toggle v-model="move" tile color="blue accent-3" group>
-              <v-btn value="yes" outlined width="33%">주차 필요</v-btn>
-              <v-btn value="with" outlined width="33%">얻어타요</v-btn>
-              <v-btn value="no" outlined width="33%">필요 없음</v-btn>
+              <v-btn value="yes" outlined plain width="33%">주차 필요</v-btn>
+              <v-btn value="with" outlined plain width="33%">얻어타요</v-btn>
+              <v-btn value="no" outlined plain width="33%">필요 없음</v-btn>
             </v-btn-toggle>
           </v-col>
         </v-row>
@@ -64,7 +66,7 @@
           <v-btn @click="save">저장하기</v-btn>
           <v-btn @click="closeSubmit">닫기</v-btn>
         </v-row>
-        <v-subheader class="text-center align-self-center mt-3">
+        <v-subheader class="subtitle-2 text-center align-self-center mt-3">
           수정이 필요하신 분은 연락주시기 바랍니다.
         </v-subheader>
       </v-container>
@@ -77,8 +79,7 @@ import { Component, Vue } from 'vue-property-decorator'
 // import { getDatabase } from 'firebase/database'
 import {
   ref as rtRef,
-  set,
-  get
+  set
 } from 'firebase/database'
 import { rtdb } from '@/boot/firebase'
 
@@ -86,7 +87,6 @@ import { rtdb } from '@/boot/firebase'
 export default class LayoutAttendance extends Vue {
   numbers = [0, 1, 2, 3] // with people num list
   name = ''
-  attend = false
   withPeopleNum = 0
   withChildNum = 0
   meal = ''
@@ -101,7 +101,6 @@ export default class LayoutAttendance extends Vue {
     try {
       await set(rtRef(rtdb, 'attendance/' + now.getTime()), {
         name: this.name,
-        attend: this.attend,
         withPeopleNum: this.withPeopleNum,
         withChildNum: this.withChildNum,
         meal: this.meal,
@@ -118,5 +117,8 @@ export default class LayoutAttendance extends Vue {
 </script>
 
 <style scoped>
+  .v-subheader {
+    font-size: 1.2rem;
+  }
 
 </style>
