@@ -33,8 +33,8 @@
           참석 등록을 하지않은 경우 식사가 어려울 수 있으니 꼭 등록해주시기
           바랍니다.
         </v-row>
-        <layout-attendance class="mt-5" v-show="submitFlag" @submitClose="submitClose" />
-        <layout-photos class="mt-5" v-if="photoFlag" @photoClose="photoCLose"/>
+        <layout-attendance class="mt-5" v-show="submitFlag" @submitClose="submitClose" :isMobile="isMobile()"/>
+        <layout-photos class="mt-5" v-if="photoFlag" @closePhotos="closePhotos"/>
         <v-dialog v-model="dialogFlag" width="fit-content">
           <v-card class="rounded-lg" width="fit-content">
               <!-- <v-img

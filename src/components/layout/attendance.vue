@@ -31,7 +31,8 @@
           </v-col>
         </v-row>
         <v-row class="justify-center pt-0 mt-0">
-          <v-col class="ma-0 pa-0">
+          <v-spacer cols=4 v-if="!isMobile"></v-spacer>
+          <v-col class="ma-0 pa-0" :cols="isMobile ? '12' : '8'">
             가족은 대표로 1분만 등록해주세요
           </v-col>
         </v-row>
@@ -83,7 +84,13 @@ import {
 } from 'firebase/database'
 import { rtdb } from '@/boot/firebase'
 
-@Component
+@Component({
+  props: {
+    isMobile: {
+      type: Boolean
+    }
+  }
+})
 export default class LayoutAttendance extends Vue {
   numbers = [0, 1, 2, 3] // with people num list
   name = ''

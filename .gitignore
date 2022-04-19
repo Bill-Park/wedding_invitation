@@ -125,3 +125,4 @@ firebaseConfig.js
 
 # images
 *.jpg
+*.webp
