@@ -2,7 +2,10 @@
   <v-app>
     <v-main>
       <v-container class="d-flex flex-column pa-0 pt-5">
-        <v-img class="align-self-center" src="@/assets/comp_main.webp" height="50%"/>
+        <!-- <v-img class="align-self-center" src="@/assets/comp_main.webp" height="50%"/> -->
+        <v-row class="align-self-center headline">인사말</v-row>
+        <v-row class="align-self-center title">블라블라</v-row>
+        <v-row class="align-self-center body-1">감사합니다.</v-row>
         <v-row id="button_group" group class="mt-4 align-self-center px-2 d-flex flex-row">
           <v-btn
           outlined
@@ -33,8 +36,12 @@
           참석 등록을 하지않은 경우 식사가 어려울 수 있으니 꼭 등록해주시기
           바랍니다.
         </v-row>
-        <layout-attendance class="mt-5" v-show="submitFlag" @submitClose="submitClose" :isMobile="isMobile()"/>
-        <layout-photos class="mt-5" v-if="photoFlag" @closePhotos="closePhotos"/>
+        <v-row v-show="submitFlag">
+          <layout-attendance class="mt-5" @submitClose="submitClose" :isMobile="isMobile()"/>
+        </v-row>
+        <v-row v-if="photoFlag">
+          <layout-photos class="mt-5" @closePhotos="closePhotos" style="width:100%"/>
+        </v-row>
         <v-dialog v-model="dialogFlag" width="fit-content">
           <v-card class="rounded-lg" width="fit-content">
               <!-- <v-img
@@ -70,6 +77,9 @@
               </v-btn>
           </v-card>
         </v-dialog>
+        <v-row class="align-self-center mt-10">
+          계좌보기
+        </v-row>
       </v-container>
     </v-main>
   </v-app>
