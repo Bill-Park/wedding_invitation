@@ -126,3 +126,9 @@ firebaseConfig.js
 # images
 *.jpg
 *.webp
+
+# env files
+.env*
+
+# font files
+src/assets/fonts/*

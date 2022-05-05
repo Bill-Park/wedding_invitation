@@ -1,78 +1,78 @@
 <template>
-  <v-app>
-    <v-main>
-      <v-container class="d-flex flex-column">
-        <v-row class="pb-0 mb-0" align="center">
-          <v-col cols=4>
-            <v-subheader class="black--text justify-center pl-0">
-              성&nbsp;&nbsp;&nbsp;&nbsp;함
-            </v-subheader>
-          </v-col>
-          <v-col>
-            <v-text-field label="이름을 적어주세요" v-model="name" dense outlined clearable hide-details="true">
-            </v-text-field>
-          </v-col>
-        </v-row>
-        <v-row class="justify-center pb-0" align="center">
-          <v-col cols=4 class="align-center justify-center">
-            <v-subheader class="black--text justify-center pl-0">
-              추가인원
-            </v-subheader>
-          </v-col>
-          <v-col>
-            <v-select
-              :items="numbers"
-              label="7세 미만"
-              v-model="withChildNum"
-            />
-          </v-col>
-          <v-col>
-            <v-select :items="numbers" label="그 외" v-model="withPeopleNum" />
-          </v-col>
-        </v-row>
-        <v-row class="justify-center pt-0 mt-0">
-          <v-spacer cols=4 v-if="!isMobile"></v-spacer>
-          <v-col class="ma-0 pa-0" :cols="isMobile ? '12' : '8'">
+  <v-main>
+    <v-container class="d-flex flex-column">
+      <v-row class="pb-0 mb-0" align="center">
+        <v-col cols=4>
+          <v-subheader class="justify-center pl-0 subtitle-1">
+            성&nbsp;&nbsp;&nbsp;&nbsp;함
+          </v-subheader>
+        </v-col>
+        <v-col>
+          <v-text-field label="이름을 적어주세요" v-model="name" dense outlined clearable hide-details="true">
+          </v-text-field>
+        </v-col>
+      </v-row>
+      <v-row class="justify-center pb-0" align="center">
+        <v-col cols=4 class="align-center justify-center">
+          <v-subheader class="justify-center pl-0 subtitle-1">
+            추가인원
+          </v-subheader>
+        </v-col>
+        <v-col>
+          <v-select
+            :items="numbers"
+            label="7세 미만"
+            v-model="withChildNum"
+          />
+        </v-col>
+        <v-col>
+          <v-select :items="numbers" label="그 외" v-model="withPeopleNum" />
+        </v-col>
+      </v-row>
+      <v-row class="justify-center pt-0 mt-0">
+        <v-spacer cols=4 v-if="!isMobile"></v-spacer>
+        <v-col class="ma-0 pa-0" :cols="isMobile ? '12' : '8'">
+          <span style="color=#434343">
             가족은 대표로 1분만 등록해주세요
-          </v-col>
-        </v-row>
-        <v-row cols=4 class="justify-center" align="center">
-          <v-col>
-            <v-subheader class="black--text justify-center pl-0">
-              식사여부
-            </v-subheader>
-          </v-col>
-          <v-col cols="8">
-            <v-btn-toggle v-model="meal" tile color="blue accent-3" group>
-              <v-btn value="eat" outlined plain class="mx-0">잘먹겠습니다</v-btn>
-              <v-btn value="not" outlined plain class="mx-0">다음 기회에</v-btn>
-            </v-btn-toggle>
-          </v-col>
-        </v-row>
-        <v-row class="justify-center" align="center">
-          <v-col cols=4>
-            <v-subheader class="black--text justify-center pl-0">
-              주차유무
-            </v-subheader>
-          </v-col>
-          <v-col cols=8>
-            <v-btn-toggle v-model="move" tile color="blue accent-3" group>
-              <v-btn value="yes" outlined plain width="33%">주차 필요</v-btn>
-              <v-btn value="with" outlined plain width="33%">얻어타요</v-btn>
-              <v-btn value="no" outlined plain width="33%">필요 없음</v-btn>
-            </v-btn-toggle>
-          </v-col>
-        </v-row>
-        <v-row group class="align-self-center">
-          <v-btn @click="save">저장하기</v-btn>
-          <v-btn @click="closeSubmit">닫기</v-btn>
-        </v-row>
-        <v-subheader class="subtitle-2 text-center align-self-center mt-3">
-          수정이 필요하신 분은 연락주시기 바랍니다.
-        </v-subheader>
-      </v-container>
-    </v-main>
-  </v-app>
+          </span>
+        </v-col>
+      </v-row>
+      <v-row cols=4 class="justify-center" align="center">
+        <v-col>
+          <v-subheader class="justify-center pl-0 subtitle-1">
+            식사여부
+          </v-subheader>
+        </v-col>
+        <v-col cols="8">
+          <v-btn-toggle v-model="meal" tile color="blue accent-3" group>
+            <v-btn value="eat" outlined plain class="mx-0">잘먹겠습니다</v-btn>
+            <v-btn value="not" outlined plain class="mx-0">다음 기회에</v-btn>
+          </v-btn-toggle>
+        </v-col>
+      </v-row>
+      <v-row class="justify-center" align="center">
+        <v-col cols=4>
+          <v-subheader class="justify-center pl-0 subtitle-1">
+            주차유무
+          </v-subheader>
+        </v-col>
+        <v-col cols=8>
+          <v-btn-toggle v-model="move" tile color="blue accent-3" group>
+            <v-btn value="yes" outlined plain width="33%">주차 필요</v-btn>
+            <v-btn value="with" outlined plain width="33%">얻어타요</v-btn>
+            <v-btn value="no" outlined plain width="33%">필요 없음</v-btn>
+          </v-btn-toggle>
+        </v-col>
+      </v-row>
+      <v-row group class="align-self-center">
+        <v-btn @click="save">저장하기</v-btn>
+        <v-btn @click="closeSubmit">닫기</v-btn>
+      </v-row>
+      <v-subheader class="subtitle-2 text-center align-self-center mt-3">
+        수정이 필요하신 분은 연락주시기 바랍니다.
+      </v-subheader>
+    </v-container>
+  </v-main>
 </template>
 
 <script lang="ts">

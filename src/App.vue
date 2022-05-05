@@ -17,12 +17,21 @@ export default class App extends Vue {
 </script>
 
 <style lang="scss">
+.v-application {
+    font-family: 'malgun', sans-serif !important;
+  }
+@font-face {
+  font-family:"malgun";
+  src: url('assets/fonts/malgun.ttf') format('truetype');
+  font-weight:300;
+}
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #434343;
 }
 
 #nav {
