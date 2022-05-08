@@ -1,19 +1,24 @@
 <template>
     <v-main>
       <v-container class="d-flex flex-column mb-10">
-        <v-row class="align-self-center subtitle-1">초대합니다.</v-row>
-        <v-row class="align-self-center headline">설마설마하셨죠?</v-row>
-        <v-row class="align-self-center headline"
-          >저희 드디어 결혼합니다!!</v-row
+        <v-row id="expression" class="align-self-center title">
+        인생에서 가장 위대한 일은<br/>
+        누군가를 사랑하고 사랑받는 일이라고 합니다.<br/>
+        이 자리를 빌어 더 크게 도약하고자 합니다.<br/>
+        여러분의 축복으로 더 큰 사랑을 만들어주세요
+        </v-row>
+
+        <v-row class="align-self-center title mt-5"
+          >저희 드디어 결혼합니다.</v-row
         >
-        <v-row align-content="center">
-          <v-col cols="6">
+        <v-row align-content="center" class="px-0 mt-4">
+          <v-col cols="6" class="px-0">
             <v-btn @click="sangWooCall" class="justify-center pa-2" color="grey lighten-2">
               신랑에게 연락하기
               <v-icon>mdi-phone</v-icon>
             </v-btn>
           </v-col>
-          <v-col cols="6">
+          <v-col cols="6" class="px-0">
             <v-btn @click="minJiCall" class="justify-center pa-2" color="grey lighten-2">
               신부에게 연락하기
               <v-icon>mdi-phone</v-icon>
@@ -75,10 +80,10 @@
               </v-card-title>
               <v-card-text>
                 <v-row class="align-center">
-                  <v-col cols=7 class="p-0">
+                  <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          우리은행 (에금주: 박상우)
+                          우리은행 (예금주: 박상우)
                         </div>
                         <div>
                           {{bankAccount.sangwoo}}
@@ -101,10 +106,10 @@
               </v-card-title>
               <v-card-text>
                 <v-row class="align-center">
-                  <v-col cols=7 class="p-0">
+                  <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          우리은행 (에금주:  {{name.sangwoo_father}})
+                          우리은행 (예금주:  {{name.sangwoo_father}})
                         </div>
                         <div>
                           {{bankAccount.sangwoo_father}}
@@ -158,10 +163,10 @@
               </v-card-title>
               <v-card-text>
                 <v-row class="align-center">
-                  <v-col cols=7 class="p-0">
+                  <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          국민은행 (에금주: 황민지)
+                          국민은행 (예금주: 황민지)
                         </div>
                         <div>
                           {{bankAccount.minji}}
@@ -184,10 +189,10 @@
               </v-card-title>
               <v-card-text>
                 <v-row class="align-center">
-                  <v-col cols=7 class="p-0">
+                  <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          농협 (에금주: {{name.minji_father}})
+                          농협 (예금주: {{name.minji_father}})
                         </div>
                         <div>
                           {{bankAccount.minji_father}}
@@ -210,10 +215,10 @@
               </v-card-title>
               <v-card-text>
                 <v-row class="align-center">
-                  <v-col cols=7 class="p-0">
+                  <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          국민은행 (에금주: {{name.minji_mother}})
+                          국민은행 (예금주: {{name.minji_mother}})
                         </div>
                         <div>
                           {{bankAccount.minji_mother}}
@@ -263,7 +268,7 @@ export default class LayoutInformation extends Vue {
   bankAccount = {
     sangwoo: process.env.VUE_APP_SANGWOO_BANK,
     sangwoo_father: process.env.VUE_APP_SANGWOO_FATHER_BANK,
-    minji: process.env.VUE_APP_SANGWOO_BANK,
+    minji: process.env.VUE_APP_MINJI_BANK,
     minji_father: process.env.VUE_APP_MINJI_FATHER_BANK,
     minji_mother: process.env.VUE_APP_MINJI_MOTHER_BANK
   }
@@ -298,6 +303,10 @@ export default class LayoutInformation extends Vue {
 <style scoped>
 .v-subheader {
   font-size: 1.2rem;
+}
+#expression {
+  font-family: "nanum_gang", "malgun" !important;
+  font-weight: 600;
 }
 
 </style>

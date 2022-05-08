@@ -32,7 +32,7 @@
       <v-row class="justify-center pt-0 mt-0">
         <v-spacer cols=4 v-if="!isMobile"></v-spacer>
         <v-col class="ma-0 pa-0" :cols="isMobile ? '12' : '8'">
-          <span style="color=#434343">
+          <span style="color:rgba(0,0,0,0.7);">
             가족은 대표로 1분만 등록해주세요
           </span>
         </v-col>
@@ -56,7 +56,7 @@
             주차유무
           </v-subheader>
         </v-col>
-        <v-col cols=8>
+        <v-col cols=8 class="pl-0 pr-6">
           <v-btn-toggle v-model="move" tile color="blue accent-3" group>
             <v-btn value="yes" outlined plain width="33%">주차 필요</v-btn>
             <v-btn value="with" outlined plain width="33%">얻어타요</v-btn>

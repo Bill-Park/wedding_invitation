@@ -2,10 +2,10 @@
   <v-app>
     <v-main>
       <v-container class="d-flex flex-column pa-0 pt-5">
-        <v-row class="align-self-center title mt-5">SangWoo &#38; MinJi</v-row>
-        <v-row id="impact" class="align-self-center display-1 mt-5" :class="{'mobile-font':isMobile()}">Wedding Invitation</v-row>
-        <v-row class="align-self-center subtitle-1 mt-9" style="font-weight:bold">2022.06.18 SAT PM 01:00</v-row>
-        <v-row class="align-self-center subtitle-1 mt-2">그레이스 K 부산</v-row>
+        <v-row class="align-self-center title mt-5" @click="closeAll()">SangWoo &#38; MinJi</v-row>
+        <v-row id="impact" class="align-self-center display-1 mt-5" :class="{'mobile-font':isMobile()}" @click="closeAll()">Wedding Invitation</v-row>
+        <v-row class="align-self-center subtitle-1 mt-9" style="font-weight:bold" @click="closeAll()">2022.06.18 SAT PM 01:00</v-row>
+        <v-row class="align-self-center subtitle-1 mt-2" @click="closeAll()">그레이스 K 부산</v-row>
         <v-row id="button_group" group class="mt-10 align-self-center px-2 d-flex flex-row">
           <v-btn
           :x-large="!isMobile()"
@@ -121,6 +121,11 @@ export default class LayoutNormal extends Vue {
 
     closePhotos (): void{
       this.photoFlag = false
+    }
+
+    closeAll (): void {
+      this.submitClose()
+      this.closePhotos()
     }
 
     openMap (appName:string): void{

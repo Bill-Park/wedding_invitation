@@ -25,6 +25,11 @@ export default class App extends Vue {
   src: url('assets/fonts/malgun.ttf') format('truetype');
   font-weight:300;
 }
+@font-face {
+  font-family:"nanum_gang";
+  src: url('assets/fonts/nanum_gang.ttf') format('truetype');
+  font-weight:300;
+}
 
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
