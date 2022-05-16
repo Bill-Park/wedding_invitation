@@ -1,17 +1,13 @@
 <template>
     <v-main>
       <v-container class="d-flex flex-column mb-10">
-        <v-row id="expression" class="align-self-center title">
+        <v-row id="expression" class="align-self-center title mt-0">
         인생에서 가장 위대한 일은<br/>
         누군가를 사랑하고 사랑받는 일이라고 합니다.<br/>
         이 자리를 빌어 더 크게 도약하고자 합니다.<br/>
-        여러분의 축복으로 더 큰 사랑을 만들어주세요
+        여러분의 축복으로 더 큰 사랑을 만들어주세요.
         </v-row>
-
-        <v-row class="align-self-center title mt-5"
-          >저희 드디어 결혼합니다.</v-row
-        >
-        <v-row align-content="center" class="px-0 mt-4">
+        <v-row align-content="center" class="px-0 mt-6">
           <v-col cols="6" class="px-0">
             <v-btn @click="sangWooCall" class="justify-center pa-2" color="grey lighten-2">
               신랑에게 연락하기
@@ -83,7 +79,7 @@
                   <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          우리은행 (예금주: 박상우)
+                          {{bankName.woori}} (예금주: 박상우)
                         </div>
                         <div>
                           {{bankAccount.sangwoo}}
@@ -92,7 +88,7 @@
                   </v-col>
                   <v-col cols=3>
                     <v-btn
-                      v-clipboard:copy="bankAccount.sangwoo"
+                      v-clipboard:copy="bankAccount.sangwoo + ' ' + bankName.woori"
                       v-clipboard:success="onCopy"
                       v-clipboard:error="onError">
                       복사하기
@@ -109,7 +105,7 @@
                   <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          우리은행 (예금주:  {{name.sangwoo_father}})
+                          {{bankName.woori}} (예금주:  {{name.sangwoo_father}})
                         </div>
                         <div>
                           {{bankAccount.sangwoo_father}}
@@ -118,7 +114,7 @@
                   </v-col>
                   <v-col cols=3>
                     <v-btn
-                      v-clipboard:copy="bankAccount.sangwoo_father"
+                      v-clipboard:copy="bankAccount.sangwoo_father + ' ' + bankName.woori"
                       v-clipboard:success="onCopy"
                       v-clipboard:error="onError">
                       복사하기
@@ -166,7 +162,7 @@
                   <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          국민은행 (예금주: 황민지)
+                          {{bankName.kb}} (예금주: 황민지)
                         </div>
                         <div>
                           {{bankAccount.minji}}
@@ -175,7 +171,7 @@
                   </v-col>
                   <v-col cols=3>
                     <v-btn
-                      v-clipboard:copy="bankAccount.minji"
+                      v-clipboard:copy="bankAccount.minji + ' ' + bankName.kb"
                       v-clipboard:success="onCopy"
                       v-clipboard:error="onError">
                       복사하기
@@ -192,7 +188,7 @@
                   <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          농협 (예금주: {{name.minji_father}})
+                          {{bankName.nonghyup}} (예금주: {{name.minji_father}})
                         </div>
                         <div>
                           {{bankAccount.minji_father}}
@@ -201,7 +197,7 @@
                   </v-col>
                   <v-col cols=3>
                     <v-btn
-                      v-clipboard:copy="bankAccount.minji_father"
+                      v-clipboard:copy="bankAccount.minji_father + ' ' + bankName.nonghyup"
                       v-clipboard:success="onCopy"
                       v-clipboard:error="onError">
                       복사하기
@@ -218,7 +214,7 @@
                   <v-col cols=7 class="pa-0">
                       <v-card-text class="pa-0">
                         <div>
-                          국민은행 (예금주: {{name.minji_mother}})
+                          {{bankName.kb}} (예금주: {{name.minji_mother}})
                         </div>
                         <div>
                           {{bankAccount.minji_mother}}
@@ -227,7 +223,7 @@
                   </v-col>
                   <v-col cols=3>
                     <v-btn
-                      v-clipboard:copy="bankAccount.minji_mother"
+                      v-clipboard:copy="bankAccount.minji_mother + ' ' + bankName.kb"
                       v-clipboard:success="onCopy"
                       v-clipboard:error="onError">
                       복사하기
@@ -273,6 +269,12 @@ export default class LayoutInformation extends Vue {
     minji_mother: process.env.VUE_APP_MINJI_MOTHER_BANK
   }
 
+  bankName = {
+    woori: '우리은행',
+    kb: '국민은행',
+    nonghyup: '농협'
+  }
+
   name = {
     sangwoo_father: process.env.VUE_APP_SANGWOO_FATHER,
     sangwoo_mother: process.env.VUE_APP_SANGWOO_MOTHER,
@@ -305,6 +307,7 @@ export default class LayoutInformation extends Vue {
   font-size: 1.2rem;
 }
 #expression {
+  color: #783f04;
   font-family: "nanum_gang", "malgun" !important;
   font-weight: 600;
 }

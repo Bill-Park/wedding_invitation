@@ -3,7 +3,7 @@
     <v-main>
       <swiper class="swiper" :options="swiperOption" @reachEnd="swipe('end')">
         <swiper-slide
-          v-for="n in 24"
+          v-for="n in 32"
           :key="n"
           :class="['slide-' + n]">
         </swiper-slide>
@@ -64,77 +64,102 @@ export default class LayoutPhotos extends Vue {
   min-height: 60vh;
 }
 .swiper-slide.slide-1 {
-  background-image: url('../../assets/옷_1.webp');
+  background-image: url('../../assets/1 (1).webp');
 }
 .swiper-slide.slide-2 {
-  background-image: url('../../assets/옷_2.webp');
+  background-image: url('../../assets/1 (2).webp');
 }
 .swiper-slide.slide-3 {
-  background-image: url('../../assets/페스티벌_1.webp');
+  background-image: url('../../assets/1 (3).webp');
 }
 .swiper-slide.slide-4 {
-  background-image: url('../../assets/페스티벌_2.webp');
+  background-image: url('../../assets/1 (4).webp');
 }
 .swiper-slide.slide-5 {
-  background-image: url('../../assets/페스티벌_3.webp');
+  background-image: url('../../assets/1 (5).webp');
 }
 .swiper-slide.slide-6 {
-  background-image: url('../../assets/페스티벌_4.webp');
+  background-image: url('../../assets/1 (6).webp');
 }
 .swiper-slide.slide-7 {
-  background-image: url('../../assets/숲_1.webp');
+  background-image: url('../../assets/1 (7).webp');
 }
 .swiper-slide.slide-8 {
-  background-image: url('../../assets/숲_2.webp');
+  background-image: url('../../assets/1 (8).webp');
 }
 .swiper-slide.slide-9 {
-  background-image: url('../../assets/숲_3.webp');
+  background-image: url('../../assets/1 (9).webp');
 }
 .swiper-slide.slide-10 {
-  background-image: url('../../assets/숲_4.webp');
+  background-image: url('../../assets/2 (1).webp');
 }
 .swiper-slide.slide-11 {
-  background-image: url('../../assets/서부_1.webp');
+  background-image: url('../../assets/2 (2).webp');
 }
 .swiper-slide.slide-12 {
-  background-image: url('../../assets/서부_2.webp');
+  background-image: url('../../assets/2 (3).webp');
 }
 .swiper-slide.slide-13 {
-  background-image: url('../../assets/서부_3.webp');
+  background-image: url('../../assets/2 (4).webp');
 }
 .swiper-slide.slide-14 {
-  background-image: url('../../assets/서부_4.webp');
+  background-image: url('../../assets/2 (5).webp');
 }
 .swiper-slide.slide-15 {
-  background-image: url('../../assets/서부_5.webp');
+  background-image: url('../../assets/2 (6).webp');
 }
 .swiper-slide.slide-16 {
-  background-image: url('../../assets/서부_6.webp');
+  background-image: url('../../assets/2 (7).webp');
 }
 .swiper-slide.slide-17 {
-  background-image: url('../../assets/서부_7.webp');
+  background-image: url('../../assets/2 (8).webp');
 }
 .swiper-slide.slide-18 {
-  background-image: url('../../assets/서부_8.webp');
+  background-image: url('../../assets/2 (9).webp');
 }
 .swiper-slide.slide-19 {
-  background-image: url('../../assets/서부_9.webp');
+  background-image: url('../../assets/2 (10).webp');
 }
 .swiper-slide.slide-20 {
-  background-image: url('../../assets/서부_10.webp');
+  background-image: url('../../assets/3 (1).webp');;
 }
 .swiper-slide.slide-21 {
-  background-image: url('../../assets/바다_1.webp');
+  background-image: url('../../assets/3 (2).webp');;
 }
 .swiper-slide.slide-22 {
-  background-image: url('../../assets/바다_2.webp');
+  background-image: url('../../assets/3 (3).webp');;
 }
 .swiper-slide.slide-23 {
-  background-image: url('../../assets/바다_3.webp');
+  background-image: url('../../assets/3 (4).webp');;
 }
 .swiper-slide.slide-24 {
-  background-image: url('../../assets/바다_4.webp');
+  background-image: url('../../assets/3 (5).webp');;
 }
+.swiper-slide.slide-25 {
+  background-image: url('../../assets/4 (1).webp');
+}
+.swiper-slide.slide-26 {
+  background-image: url('../../assets/4 (2).webp');
+}
+.swiper-slide.slide-27 {
+  background-image: url('../../assets/4 (3).webp');
+}
+.swiper-slide.slide-28 {
+  background-image: url('../../assets/4 (4).webp');
+}
+.swiper-slide.slide-29 {
+  background-image: url('../../assets/5 (1).webp');
+}
+.swiper-slide.slide-30 {
+  background-image: url('../../assets/5 (2).webp');
+}
+.swiper-slide.slide-31 {
+  background-image: url('../../assets/5 (3).webp');
+}
+.swiper-slide.slide-32 {
+  background-image: url('../../assets/5 (4).webp');
+}
+
 .swiper-button-white {
   opacity: 0;
   height: 100%;

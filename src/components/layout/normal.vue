@@ -13,7 +13,7 @@
           class="rounded rounded-r-0 title gray--text text--darken-3 subtitle-1"
           @click="toggleSubmit"
           :class="{'light-blue lighten-5 blue--text':submitFlag, 'px-5 py-5':isMobile()}">
-          참석 등록
+          참석등록
           </v-btn>
           <v-btn
           :x-large="!isMobile()"
@@ -65,11 +65,11 @@
         </v-dialog>
 
         <v-row class="mt-1" v-show="!(submitFlag || photoFlag)">
-          <v-img class="align-self-center" src="@/assets/comp_main.webp"/>
+          <v-img class="align-self-center" src="@/assets/main_2.webp"/>
         </v-row>
         <layout-information
           v-show="!(submitFlag || photoFlag)"
-          class="mt-10"
+          class="mt-5"
           :isMobile="isMobile()">
         </layout-information>
       </v-container>
