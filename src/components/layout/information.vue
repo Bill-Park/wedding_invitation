@@ -21,7 +21,16 @@
             </v-btn>
           </v-col>
         </v-row>
-        <v-row class="mt-10">
+        <v-row class="align-self-center mt-5 subtitle-1">
+          2022.05.18 (토) 13:00
+        </v-row>
+        <v-row class="align-self-center mt-2 title">
+          그레이스K 부산
+        </v-row>
+        <v-row class="align-self-center mt-2 subtitle-1">
+          기장군 일광읍 화전리 35-8
+        </v-row>
+        <v-row class="mt-8">
           <v-col cols="6" class="align-self-center align-center">
             <v-row class="justify-center subtitle-1 mb-0">
             신랑측 혼주
